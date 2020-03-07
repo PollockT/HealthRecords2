@@ -1,0 +1,71 @@
+﻿<Window x:Class="HealthRecords.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HealthRecords"
+        mc:Ignorable="d"
+        Title="Health Records- Theodore Pollock Assignment 2" Height="600" Width="400">
+    <Border Padding="10">
+        <StackPanel>
+            
+            <!--TOP BUTTON CONTROLS-->
+            <Grid>
+            
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Button Margin="0 0 10 0" Grid.Column="0"  x:Name="saveBtn" Content="Save" Click="saveBtn_Click"/>
+                <Button Grid.Column="1" x:Name="clrBtn" Content="Clear Forum" Click="clrBtn_Click"/>
+                <Button Margin="10 0 0 0"  Grid.Column="2" x:Name="quitBtn" Content="Quit" Click="quitBtn_Click"/>
+
+            </Grid>
+            
+            <!--Patient Name Information-->
+       
+            <TextBlock Margin="0 10" Grid.Column="0"  x:Name="fName" Text="First Name" HorizontalAlignment="Left"/>
+            <TextBox x:Name="fNameBox" TextChanged="fNameBox_TextChanged"/>
+            <TextBlock Margin="0 10" Grid.Column="1" x:Name="mName" Text="Middle Name" HorizontalAlignment="Left"/>
+            <TextBox x:Name="mNameBox" TextChanged="mNameBox_TextChanged"/>
+            <TextBlock Margin="0 10" Grid.Column="2" x:Name="lName" Text="Last Name" HorizontalAlignment="Left"/>
+            <TextBox x:Name="lNameBox" TextChanged="lNameBox_TextChanged"/>
+            
+            <!--Patient Profiling Information-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="D.O.B" Grid.Column="0" HorizontalAlignment="Center"/>
+                <TextBlock Text="Sex" Grid.Column="1" HorizontalAlignment="Center"/>
+                <TextBlock Text="Height (cm)" Grid.Column="2" HorizontalAlignment="Center"/>
+                <TextBlock Text="Weight (kgs)" Grid.Column="3" HorizontalAlignment="Center"/>
+
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <DatePicker x:Name="dobPcker" Grid.Column="0" Height="30" Width="90" Margin="0 10" HorizontalAlignment="Center"/>
+                <TextBox x:Name="gndrBox"  Grid.Column="1" Text=""  HorizontalAlignment="Center" VerticalAlignment="Center" TextChanged="gndrBox_TextChanged"/>
+                <TextBox x:Name="hghtBox" Grid.Column="2" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" TextChanged="hghtBox_TextChanged"/>
+                <TextBox x:Name="wghtBox" Grid.Column="3" Text="" VerticalAlignment="Center" HorizontalAlignment="Center" TextChanged="wghtBox_TextChanged"/>          
+            </Grid>
+            
+            <!--Patient Account Information-->
+            <TextBlock Text="Patient Account Number" Margin="0 10 "/>
+            <TextBox x:Name="ptAccnt" Text="" Margin="0 10" TextChanged="ptAccnt_TextChanged"/>
+
+            <TextBlock Text="Exsisting Patient Records" HorizontalAlignment="Center" Margin="0 10 "/>
+
+        </StackPanel>
+    </Border>
+</Window>
